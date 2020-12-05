@@ -25,7 +25,7 @@ SECRET_KEY = 'b==z+fm9vu*v@s_i-hl!r((7%l6at_0+fw!djm#hwxn7zy9!sp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['forestsigma.herokuapp.com']
+ALLOWED_HOSTS = ['forestsigma.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'forestsigma.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
