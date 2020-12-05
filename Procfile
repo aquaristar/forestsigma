@@ -1,0 +1,1 @@
+web: gunicorn forestsigma.wsgi --log-file -
