@@ -1,0 +1,91 @@
+﻿{% load static  %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stores of ABC Warehouse</title>
+
+	<!-- Global stylesheets -->
+	<link rel="icon" 
+      type="image/png" 
+      href={% static 'images/stores_fav.png' %}>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/icons/icomoon/styles.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/core.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/components.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/colors.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/my.css' %}" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="{% static 'js/plugins/loaders/pace.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/core/libraries/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/core/libraries/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/loaders/blockui.min.js' %}"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="{% static 'js/plugins/forms/styling/switchery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/forms/styling/uniform.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/forms/selects/bootstrap_multiselect.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/ui/moment/moment.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/ui/fullcalendar/fullcalendar.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/pickers/daterangepicker.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/tables/datatables/datatables.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/forms/selects/select2.min.js' %}"></script>
+
+	<!--<script type="text/javascript" src="{% static 'js/core/app.js' %}"></script>-->
+
+	<script type="text/javascript" src="{% static 'js/pages/extra_fullcalendar.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/pages/form_layouts.js' %}"></script>
+
+	<!-- /theme JS files -->
+	<script type="text/javascript" src="{% static 'js/my.js' %}"></script>
+
+</head>
+	
+<body class="navbar-bottom">
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+
+		<div class="navbar-header">
+			<a class="navbar-brand navbar-brand-my" href="{% url 'index' %}">
+				<h1>
+					FOREST-SIGMA*36
+				</h1>
+			</a>
+		</div>
+
+	</div>
+	<!-- /main navbar -->
+
+	<div style="min-height: 5px;background-color: #37474f;border-top-color: transparent;"></div>
+
+	<!-- Page header -->
+	<div class="page-header">
+		
+	</div>
+	<!-- /page header -->
+
+{% block content %}
+{% endblock %}
+
+	<!-- Footer -->
+	<footer class="page-footer font-small blue">
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">
+			Copyright© <a href="http://www.abcwarehouse.com" class="navbar-link">Claude Forest</a> 2020.
+		</div>
+		<!-- Copyright -->
+
+	</footer>
+	<!-- /footer -->
+
+</body>
+</html>
