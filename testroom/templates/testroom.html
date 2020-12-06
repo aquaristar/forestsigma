@@ -18,35 +18,57 @@
 
 			<div class="content">
 
-				<div class="panel panel-body border-top-primary">
+				<div class="panel panel-body border-top-primary text-center">
 					<div class="panel-heading">
-						<h6 class="panel-title text-semibold">Item - 1</h6>
-						<span class="help-block">Forest Sigma * 36</span>
+						<h6 class="panel-title text-semibold">“To what extent do I like to…?”</h6>
+						<span class="help-block">There is no time limit.</span>
 					</div>
 					
 					<form id="test" method="POST" action="{% url 'testroom_index' %}">
 						{% csrf_token %}
 						<div class="panel-body">
 							<div class="form-group">
-								<label>“To what extent do I like to…?” There is no time limit.</label>
+								<h2>Examine my inner world</h2>
 							</div>
 							<div class="form-group">
-								<label class="radio-inline">
-									<div class="choice border-primary text-primary-600">
-										<span class="checked"><input type="radio" class="styled" name="primary-radio" checked="checked"></span>
-									</div>
-									Selected
-								</label>
-							</div>
-							<div class="form-group">
-								<label>Content</label>									
-								<textarea name="content" rows="5" cols="5" class="form-control" placeholder="Enter new alarm content here"></textarea>
-							</div>
-							<div class="text-right">
-								<button id="btnPostAlarm" type="submit" class="btn btn-primary">Next <i class="icon-arrow-right14 position-right"></i></button>
+								<div class="col-xs-3"> 
+									Very little
+								</div>
+								<div class="col-xs-1">
+									<label>
+										<input type="radio" name="unstyled-radio-left">
+									</label>
+								</div>
+								<div class="col-xs-1">
+									<label>
+										<input type="radio" name="unstyled-radio-left">
+									</label>
+								</div>
+								<div class="col-xs-1">
+									<label>
+										<input type="radio" name="unstyled-radio-left">
+									</label>
+								</div>
+								<div class="col-xs-1">
+									<label>
+										<input type="radio" name="unstyled-radio-left">
+									</label>
+								</div>
+								<div class="col-xs-1">
+									<label>
+										<input type="radio" name="unstyled-radio-left">
+									</label>
+								</div>
+								<div class="col-xs-4"> 
+									Very much
+								</div>
 							</div>
 						</div>
-
+						<div class="form-group">
+							<div class="text-right">
+								<button id="post_test" type="submit" class="btn btn-primary">Next <i class="icon-arrow-right14 position-right"></i></button>
+							</div>
+						</div>
 					</form>
 				</div>
 			
