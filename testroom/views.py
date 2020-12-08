@@ -85,8 +85,9 @@ def test_result(request):
 
 
 def admin(request):
-	test_list = Test.objects.all()
-	if not test_list:
+	try:
+		test_list = Test.objects.all()
+	except Test.DoesNotExist:		
 		test_list = []
 	return render(request, 'test_admin.html', {'test_list':test_list})
 
