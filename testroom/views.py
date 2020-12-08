@@ -86,6 +86,8 @@ def test_result(request):
 
 def admin(request):
 	test_list = Test.objects.all()
+	if not test_list:
+		test_list = []
 	return render(request, 'test_admin.html', {'test_list':test_list})
 
 def test_detail(request, test_id):
