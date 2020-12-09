@@ -12,7 +12,7 @@ def get_client_ip(request):
 
 def get_test(my_ip):
 	try:
-		test = Test.objects.filter(value=0).get(user_ip=my_ip)		
+		test = Test.objects.filter(is_finished=False).get(user_ip=my_ip)		
 	except Test.DoesNotExist:
 		test = None
 	
@@ -77,8 +77,9 @@ def index(request):
 		# 	submit_button_flag = True
 		# if sequence == 1:
 		# 	return test_result(request)
+		print(next_item_id)
 		if next_item_id > 396:
-			test_result(request)
+			return redirect('/test/result')
 	#current_sequence = get_item_list(sequence)
 	next_item = Item.objects.get(pk=next_item_id)
 	subscale_list = Subscale.objects.all()
@@ -88,17 +89,26 @@ def index(request):
 	return render(request, 'testroom.html', {'item':next_item})
 
 
-def calc_test_result():
-	return 100
+def calc_test_result():	
+	return 100, 10, 1
 
 def test_result(request):
 	my_ip = get_client_ip(request)
 	current_test = get_test(my_ip)
-	test_result = calc_test_result()
-	current_test.value = test_result
-	current_test.save()
+	item_result, subscale_result, scale_result = calc_test_result()
 	test_item_list = TestItem.objects.filter(test_id=current_test.test_id)
-	return render(request, 'test_result.html', {'test_result':test_result, 'test_item_list':test_item_list})
+	return render(request, 'test_result.html', {'item_result':item_result, 'subscale_result':subscale_result, 'scale_result': scale_result})
+
+def save_and_new_test(request):
+	my_ip = get_client_ip(request)
+	current_test = get_test(my_ip)
+	item_result, subscale_result, scale_result = calc_test_result()
+	current_test.item_result = item_result
+	current_test.subscale_result = subscale_result
+	current_test.scale_result = scale_result
+	current_test.is_finished = True
+	current_test.save()
+	return redirect('/')
 
 
 def admin(request):
