@@ -1,0 +1,261 @@
+[
+  {
+    "model": "testroom.subscale",
+    "pk": 1,
+    "fields": {
+      "label": "SELF-ANALYSIS"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 2,
+    "fields": {
+      "label": "INTUITION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 3,
+    "fields": {
+      "label": "MEDITATION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 4,
+    "fields": {
+      "label": "AMBITION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 5,
+    "fields": {
+      "label": "PRIDE"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 6,
+    "fields": {
+      "label": "LEADERSHIP"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 7,
+    "fields": {
+      "label": "CONVERSATION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 8,
+    "fields": {
+      "label": "AFFILIATION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 9,
+    "fields": {
+      "label": "SOLIDARITY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 10,
+    "fields": {
+      "label": "AUTONOMY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 11,
+    "fields": {
+      "label": "FREEDOM"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 12,
+    "fields": {
+      "label": "SOLITUDE"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 13,
+    "fields": {
+      "label": "AMUSEMENT"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 14,
+    "fields": {
+      "label": "EROTICISM"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 15,
+    "fields": {
+      "label": "PLAYFULNESS"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 16,
+    "fields": {
+      "label": "ORDERLINESS"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 17,
+    "fields": {
+      "label": "PLANNING"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 18,
+    "fields": {
+      "label": "PRECISION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 19,
+    "fields": {
+      "label": "INNOVATION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 20,
+    "fields": {
+      "label": "ABSTRACTION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 21,
+    "fields": {
+      "label": "REFLECTION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 22,
+    "fields": {
+      "label": "CONFORMITY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 23,
+    "fields": {
+      "label": "TRADITION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 24,
+    "fields": {
+      "label": "SECURITY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 25,
+    "fields": {
+      "label": "DEVOTION"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 26,
+    "fields": {
+      "label": "HARMONY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 27,
+    "fields": {
+      "label": "RESPECT"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 28,
+    "fields": {
+      "label": "RESPONSE"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 29,
+    "fields": {
+      "label": "REVENGE"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 30,
+    "fields": {
+      "label": "ANGER"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 31,
+    "fields": {
+      "label": "TEMERITY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 32,
+    "fields": {
+      "label": "ADVENTURE"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 33,
+    "fields": {
+      "label": "VARIETY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 34,
+    "fields": {
+      "label": "JOVIALITY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 35,
+    "fields": {
+      "label": "VIVACITY"
+    }
+  },
+  {
+    "model": "testroom.subscale",
+    "pk": 36,
+    "fields": {
+      "label": "OPTIMISM"
+    }
+  }
+]
+
+
+
+
+
+
+

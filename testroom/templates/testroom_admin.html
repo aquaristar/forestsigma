@@ -1,0 +1,80 @@
+{% extends '_base.html' %}
+{% load static  %}
+
+{% block content %}
+
+<!-- Page container -->
+<div class="page-container">
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<div class="page-header page-header-default">
+				
+			</div>
+
+			<div class="content">
+
+				<div class="panel">
+					<div class="panel-heading">
+						<h6 class="panel-title text-semibold">Admin Dashboard</h6>
+						<span class="help-block">You can check test list which user took.</span>
+					</div>
+					
+					<div class="panel-body">
+	                	<table class="table datatable-basic">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>User IP</th>
+									<th>Test Result Value</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody id="tbodyAlarm">
+								{% for test in test_list %}
+								<tr>
+									<td>
+										<a href="/test/detail/{{test.test_id}}">
+											{{test.test_id}}
+										</a>
+									</td>
+									<td>
+										{{test.user_ip}}
+									</td>
+									<td>
+										{{test.value}}
+									</td>
+									<td>
+										<a href="/test/delete/{{test.test_id}}">Delete</a>
+									</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>						
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="content-divider form-group"><span> </span></div>				
+
+		</div>
+		<!-- /Main content -->
+
+	</div>
+	<!-- /Page content -->
+
+</div>
+<!-- /Page container -->
+
+<script>
+	
+</script>
+
+
+{% endblock %}

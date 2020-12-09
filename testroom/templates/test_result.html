@@ -1,0 +1,73 @@
+{% extends '_base.html' %}
+{% load static  %}
+
+{% block content %}
+
+<!-- Page container -->
+<div class="page-container">
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<div class="page-header page-header-default">
+				
+			</div>
+
+			<div class="content">
+
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="text_center">Test Result : {{test_result}}</h2>
+					</div>
+					
+					<div class="panel-body">						
+	                	<table class="table datatable-basic">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Item</th>
+									<th>Checked Choice</th>
+								</tr>
+							</thead>
+							<tbody id="tbodyAlarm">
+								{% for test_item in test_item_list %}
+								<tr>
+									<td>										
+										{{forloop.counter}}										
+									</td>
+									<td>
+										{{test_item.item_id.label}}
+									</td>
+									<td>
+										{{test_item.choice_id.label}}
+									</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>						
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="content-divider form-group"><span> </span></div>				
+
+		</div>
+		<!-- /Main content -->
+
+	</div>
+	<!-- /Page content -->
+
+</div>
+<!-- /Page container -->
+
+<script>
+	
+</script>
+
+
+{% endblock %}

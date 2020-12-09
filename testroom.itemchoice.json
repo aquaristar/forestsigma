@@ -1,0 +1,42 @@
+[
+  {
+    "model": "testroom.itemchoice",
+    "pk": 1,
+    "fields": {
+      "label": "Very Little",
+      "value": -2
+    }
+  },
+  {
+    "model": "testroom.itemchoice",
+    "pk": 2,
+    "fields": {
+      "label": "Little",
+      "value": -1
+    }
+  },
+  {
+    "model": "testroom.itemchoice",
+    "pk": 3,
+    "fields": {
+      "label": "Normal",
+      "value": 0
+    }
+  },
+  {
+    "model": "testroom.itemchoice",
+    "pk": 4,
+    "fields": {
+      "label": "Much",
+      "value": 1
+    }
+  },
+  {
+    "model": "testroom.itemchoice",
+    "pk": 5,
+    "fields": {
+      "label": "Very Much",
+      "value": 2
+    }
+  }
+]
