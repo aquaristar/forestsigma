@@ -1,0 +1,92 @@
+{% extends '_base.html' %}
+{% load static  %}
+
+{% block content %}
+
+<!-- Page container -->
+<div class="page-container">
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<div class="page-header page-header-default">
+				
+			</div>
+
+			<div class="content">
+
+				<div class="panel panel-body border-top-primarys">
+					<div class="panel-heading">
+						<span class="help-block">Sequence : {{sequence}} page</span>
+						<h6 class="panel-title text-semibold">“To what extent do I like to…?” There is no time limit.</h6>
+					</div>
+					
+					<form id="test" method="POST" action="{% url 'testroom_index' %}">
+						<input type="hidden" name="sequence" value="{{sequence}}">
+						{% csrf_token %}
+						{% for data in data_list %}
+						<div class="panel-body">
+							<div class="form-group">
+								<h5>{{forloop.counter}}. [{{data.0.label}}] - {{data.1.label}}</h5>
+							</div>
+							<div class="radio">
+								<div class="form-group">
+									<label class="radio-inline">
+										<input type="radio" name="select_item_{{forloop.counter}}" value="1" checked="checked">
+										Very Little
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="select_item_{{forloop.counter}}" value="2">
+										Little
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="select_item_{{forloop.counter}}" value="3">
+										Normal
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="select_item_{{forloop.counter}}" value="4">
+										Much
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="select_item_{{forloop.counter}}" value="5">
+										Very Much
+									</label>
+								</div>						
+							</div>
+						</div>
+						{% endfor %}
+						<div class="form-group">
+							<div class="text-left">
+								{% if submit %}
+								<button id="post_test" type="submit" class="btn btn-primary">Submit <i class="icon-arrow-up13 position-right"></i></button>
+								{% else %}
+								<button id="post_test" type="submit" class="btn btn-primary">Next <i class="icon-arrow-right14 position-right"></i></button>
+								{% endif %}
+							</div>
+						</div>
+					</form>
+				</div>
+			
+			</div>
+
+
+			<div class="content-divider form-group"><span> </span></div>				
+
+		</div>
+		<!-- /Main content -->
+
+	</div>
+	<!-- /Page content -->
+
+</div>
+<!-- /Page container -->
+
+<script>
+	
+</script>
+
+
+{% endblock %}

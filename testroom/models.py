@@ -24,3 +24,6 @@ class TestItem(models.Model):
 	test_id = models.ForeignKey('Test', db_column='test_id', on_delete=models.CASCADE)
 	item_id = models.ForeignKey('Item', db_column='item_id', on_delete=models.CASCADE)
 	choice_id = models.ForeignKey('ItemChoice', db_column='choice_id', on_delete=models.CASCADE)
+
+	class Meta:
+		unique_together = ('test_id', 'item_id')

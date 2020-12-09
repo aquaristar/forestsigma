@@ -40,35 +40,52 @@ def get_item_list(sequence):
 def index(request):	
 	my_ip = get_client_ip(request)
 	current_test = get_test(my_ip)
-	sequence = 1
-	submit_button_flag = False
+	next_item_id = 1
+	#sequence = 1
+	#submit_button_flag = False
 	if request.method == 'POST':
-		print('sequence:' + request.POST['sequence'])
-		sequence = int(request.POST['sequence'])		
-		for idx in range(1,37):
-			print('select_item:' + str(idx) + " ==  " + request.POST['select_item_'+str(idx)])
-			item_id = int(range(sequence, 397, 11)[idx-1])
-			print (item_id)
-			obj, created = TestItem.objects.get_or_create(
-				test_id=current_test, 
-				item_id=Item.objects.get(item_id=item_id), 
-				choice_id=ItemChoice.objects.get(choice_id=request.POST['select_item_'+str(idx)]))
-			if not created:
-				print ("Test Item is already there")
+		## Old code
+		# print('sequence:' + request.POST['sequence'])
+		# sequence = int(request.POST['sequence'])		
+		# for idx in range(1,37):
+		# 	print('select_item:' + str(idx) + " ==  " + request.POST['select_item_'+str(idx)])
+		# 	item_id = int(range(sequence, 397, 11)[idx-1])
+		# 	print (item_id)
+		# 	obj, created = TestItem.objects.get_or_create(
+		# 		test_id=current_test, 
+		# 		item_id=Item.objects.get(item_id=item_id), 
+		# 		choice_id=ItemChoice.objects.get(choice_id=request.POST['select_item_'+str(idx)]))
+		# 	if not created:
+		# 		print ("Test Item is already there")
+		item_id = int(request.POST['item_id'])
+		choice_id = int(request.POST['item_choice'])
+		print("test_id: {test}      item_id: {item_id}     choice_id: {choice_id}".format(test=current_test.test_id, item_id=item_id,choice_id=choice_id))
+		obj, created = TestItem.objects.get_or_create(
+			test_id=current_test, 
+			item_id=Item.objects.get(item_id=item_id),
+			choice_id=ItemChoice.objects.get(pk=choice_id))
+		if not created:
+			print ("Error: Test Item is duplicated")
+			raise
+
 	
-	current_max_test_item = get_test_item(current_test.test_id)	
-	if current_max_test_item:
-		print(current_max_test_item.item_id.item_id)
-		sequence = int(current_max_test_item.item_id.item_id) % 11 + 1
-		if sequence == 11:
-			submit_button_flag = True
-		if sequence == 1:
-			return test_result(request)
-	current_sequence = get_item_list(sequence)
+	stored_max_test_item = get_test_item(current_test.test_id)	
+	if stored_max_test_item:
+		#sequence = int(stored_max_test_item.item_id.item_id) % 11 + 1
+		next_item_id = int(stored_max_test_item.item_id.item_id) + 1
+		# if sequence == 11:
+		# 	submit_button_flag = True
+		# if sequence == 1:
+		# 	return test_result(request)
+		if next_item_id > 396:
+			test_result(request)
+	#current_sequence = get_item_list(sequence)
+	next_item = Item.objects.get(pk=next_item_id)
 	subscale_list = Subscale.objects.all()
 	
-	data_list = zip(subscale_list, current_sequence)
-	return render(request, 'testroom.html', {'data_list':data_list, 'sequence':sequence, 'submit':submit_button_flag})
+	#data_list = zip(subscale_list, current_sequence)
+	#return render(request, 'testroom.html', {'data_list':data_list, 'sequence':sequence, 'submit':submit_button_flag})
+	return render(request, 'testroom.html', {'item':next_item})
 
 
 def calc_test_result():
