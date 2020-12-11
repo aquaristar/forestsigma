@@ -24,20 +24,11 @@
 					</div>
 					
 					<div class="panel-body">
+						{% for key, value in sorted_subscales.items %}
 						<div class="form-group">
-							<h5>STANDARDIZE EACH OF 396 ITEMS<span class="text-danger">* : </span>{{item_result}}</h5>
+							<h5>{{value.label}}<span class="text-danger">* : </span>{{key}}</h5>
 						</div>
-						<div class="form-group">
-							<h5>STANDARDIZE EACH OF 36 SUBSCALES<span class="text-danger">* : </span>{{subscale_result}}</h5>
-						</div>
-						<div class="form-group">
-							<h5>STANDARDIZE EACH OF 12 SCALES<span class="text-danger">* : </span>{{scale_result}}</h5>
-						</div>
-						<div class="form-group">
-							<a href="{% url 'save_and_new_test' %}">
-								Save this test result and take a new test again
-							</a>
-						</div>
+						{% endfor %}
 						<!-- 
 	                	<table class="table datatable-basic">
 							<thead>

@@ -69,11 +69,10 @@
 
 <script>
 	$(function(){
-		$('input[type="radio"]').click(function(){
-			if ($(this).is(':checked'))
-			{
-			 	$("#test_form").submit();
-			}
+		$('input[type="radio"]').change(function(event){
+		 	$("#test_form").submit();
+		 	console.log(this.value);
+		 	$('input[type="radio"]').prop('disabled', true);
 		});
 	});
 </script>
