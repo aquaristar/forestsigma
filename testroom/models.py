@@ -18,9 +18,15 @@ class ItemChoice(models.Model):
 class Test(models.Model):
 	test_id = models.AutoField(primary_key=True)
 	user_ip = models.CharField(max_length=500)
-	value = models.IntegerField(default=0)
+	item_result = models.IntegerField(default=0)
+	subscale_result = models.IntegerField(default=0)
+	scale_result = models.IntegerField(default=0)
+	is_finished = models.BooleanField(default=False)
 
 class TestItem(models.Model):
 	test_id = models.ForeignKey('Test', db_column='test_id', on_delete=models.CASCADE)
 	item_id = models.ForeignKey('Item', db_column='item_id', on_delete=models.CASCADE)
 	choice_id = models.ForeignKey('ItemChoice', db_column='choice_id', on_delete=models.CASCADE)
+
+	class Meta:
+		unique_together = ('test_id', 'item_id')

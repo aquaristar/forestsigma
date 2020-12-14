@@ -18,12 +18,18 @@
 
 			<div class="content">
 
-				<div class="panel">
+				<div class="panel panel-body border-top-primarys text-center">
 					<div class="panel-heading">
-						<h2 class="text_center">Test Result : {{test_result}}</h2>
+						<h2 class="text_center">Your Test Result</h2>
 					</div>
 					
-					<div class="panel-body">						
+					<div class="panel-body">
+						{% for key, value in sorted_subscales.items %}
+						<div class="form-group">
+							<h5>{{value.label}}<span class="text-danger">* : </span>{{key}}</h5>
+						</div>
+						{% endfor %}
+						<!-- 
 	                	<table class="table datatable-basic">
 							<thead>
 								<tr>
@@ -47,7 +53,7 @@
 								</tr>
 								{% endfor %}
 							</tbody>
-						</table>						
+						</table>						 -->
 					</div>
 				</div>
 
